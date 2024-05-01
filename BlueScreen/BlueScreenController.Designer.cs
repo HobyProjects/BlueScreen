@@ -40,7 +40,6 @@
             this.rbOnStartup = new System.Windows.Forms.RadioButton();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.chRunOnStartup = new System.Windows.Forms.CheckBox();
-            this.btnOK = new System.Windows.Forms.Button();
             this.btnApply = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.gbAction.SuspendLayout();
@@ -192,26 +191,13 @@
             this.chRunOnStartup.UseVisualStyleBackColor = true;
             this.chRunOnStartup.CheckedChanged += new System.EventHandler(this.chRunOnStartup_CheckedChanged);
             // 
-            // btnOK
-            // 
-            this.btnOK.BackColor = System.Drawing.Color.ForestGreen;
-            this.btnOK.FlatAppearance.BorderSize = 0;
-            this.btnOK.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnOK.ForeColor = System.Drawing.Color.White;
-            this.btnOK.Location = new System.Drawing.Point(22, 309);
-            this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(95, 35);
-            this.btnOK.TabIndex = 1;
-            this.btnOK.Text = "OK";
-            this.btnOK.UseVisualStyleBackColor = false;
-            // 
             // btnApply
             // 
             this.btnApply.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btnApply.FlatAppearance.BorderSize = 0;
             this.btnApply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnApply.ForeColor = System.Drawing.Color.White;
-            this.btnApply.Location = new System.Drawing.Point(120, 309);
+            this.btnApply.Location = new System.Drawing.Point(22, 309);
             this.btnApply.Name = "btnApply";
             this.btnApply.Size = new System.Drawing.Size(95, 35);
             this.btnApply.TabIndex = 1;
@@ -235,14 +221,12 @@
             // 
             // BlueScreenController
             // 
-            this.AcceptButton = this.btnOK;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(460, 370);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnApply);
-            this.Controls.Add(this.btnOK);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.gbTakeAction);
             this.Controls.Add(this.gbAction);
@@ -284,7 +268,6 @@
         private System.Windows.Forms.NumericUpDown nudTime;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.CheckBox chRunOnStartup;
-        private System.Windows.Forms.Button btnOK;
         private System.Windows.Forms.Button btnApply;
         private System.Windows.Forms.Button btnExit;
     }
