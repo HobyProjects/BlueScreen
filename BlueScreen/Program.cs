@@ -17,36 +17,51 @@ namespace BlueScreen
         [STAThread]
         static void Main()
         {
-            Thread StartBlueScreen = new Thread(WaitForCommand);
-            StartBlueScreen.Priority = ThreadPriority.Lowest;
-            StartBlueScreen.SetApartmentState(ApartmentState.STA);
-            StartBlueScreen.Start();
+            try
+            {
+                BSActions.FirstRunConfiguration();
+                Thread StartBlueScreen = new Thread(WaitForCommand);
+                StartBlueScreen.Priority = ThreadPriority.Lowest;
+                StartBlueScreen.SetApartmentState(ApartmentState.STA);
+                StartBlueScreen.Start();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }            
         }
 
         private static void WaitForCommand()
         {
-            string[] configurations = BSActions.ReadConfigurationFile();
-            while (true)
+            try
             {
-                if ((Keyboard.GetKeyStates(Key.LeftCtrl) & KeyStates.Down) > 0 && (Keyboard.GetKeyStates(Key.LeftAlt) & KeyStates.Down) > 0 && (Keyboard.GetKeyStates(Key.H) & KeyStates.Down) > 0)
+                string[] configurations = BSActions.ReadConfigurationFile();
+                while (true)
                 {
-                    break;
+                    if ((Keyboard.GetKeyStates(Key.LeftCtrl) & KeyStates.Down) > 0 && (Keyboard.GetKeyStates(Key.LeftAlt) & KeyStates.Down) > 0 && (Keyboard.GetKeyStates(Key.H) & KeyStates.Down) > 0)
+                    {
+                        break;
+                    }
+                }
+
+                if (configurations[1] != "OnStartup")
+                {
+                    Thread.Sleep((int.Parse(configurations[1]) * 60) * 1000);
+                    Application.EnableVisualStyles();
+                    Application.SetCompatibleTextRenderingDefault(false);
+                    Application.Run(new BlueScreen());
+                }
+                else
+                {
+                    Application.EnableVisualStyles();
+                    Application.SetCompatibleTextRenderingDefault(false);
+                    Application.Run(new BlueScreen());
                 }
             }
-
-            if (configurations[1] != "OnStartup")
+            catch (Exception ex)
             {
-                Thread.Sleep((int.Parse(configurations[1]) * 60) * 1000);
-                Application.EnableVisualStyles();
-                Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new BlueScreen());
-            }
-            else
-            {
-                Application.EnableVisualStyles();
-                Application.SetCompatibleTextRenderingDefault(false);
-                Application.Run(new BlueScreen());
-            }
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }   
         }
     }
 }

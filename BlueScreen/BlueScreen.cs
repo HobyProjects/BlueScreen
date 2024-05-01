@@ -26,80 +26,113 @@ namespace BlueScreen
 
         private void BlueScreen_Load(object sender, EventArgs e)
         {
-            BSActions.FirstRunConfiguration();
-            ControllerUnlockCount = 0;
-            lblProgress.Text = "0% complete";
-            Presentage = 1;
-
-            string[] configurations = BSActions.ReadConfigurationFile();
-            Action = configurations[0];
-            TimeOut = configurations[1];
-
-            this.WindowState = FormWindowState.Maximized;
-
-            if(TimeOut == "OnStartup")
+            try
             {
-                if (Action == "Shutdown")
-                    BSActions.Shutdown();
+                BSActions.FirstRunConfiguration();
+                ControllerUnlockCount = 0;
+                lblProgress.Text = "0% complete";
+                Presentage = 1;
 
-                if (Action == "Restart")
-                    BSActions.Restart();
+                string[] configurations = BSActions.ReadConfigurationFile();
+                Action = configurations[0];
+                TimeOut = configurations[1];
 
-                if (Action == "Sleep")
-                    BSActions.Sleep();
+                this.WindowState = FormWindowState.Maximized;
+
+                if (TimeOut == "OnStartup")
+                {
+                    if (Action == "Shutdown")
+                        BSActions.Shutdown();
+
+                    if (Action == "Restart")
+                        BSActions.Restart();
+
+                    if (Action == "Sleep")
+                        BSActions.Sleep();
+                }
+                else
+                {
+                    timer.Start();
+                }
             }
-            else
+            catch(Exception ex)
             {
-                timer.Start();
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            finally
+            {
+                Application.Exit();
+            }   
         }
 
         private void timer_Tick(object sender, EventArgs e)
         {
-            lblProgress.Text = $"{(Presentage * 10)}% complete";
-            Presentage++;
-
-            if(Presentage == 10)
+            try
             {
-                if (Action == "Shutdown")
-                    BSActions.Shutdown();
+                lblProgress.Text = $"{(Presentage * 10)}% complete";
+                Presentage++;
 
-                if (Action == "Restart")
-                    BSActions.Restart();
+                if (Presentage == 10)
+                {
+                    if (Action == "Shutdown")
+                        BSActions.Shutdown();
 
-                if (Action == "Sleep")
-                    BSActions.Sleep();
+                    if (Action == "Restart")
+                        BSActions.Restart();
 
-                Presentage = 1;
+                    if (Action == "Sleep")
+                        BSActions.Sleep();
+
+                    Presentage = 1;
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                Application.Exit();
+            } 
         }
 
         private void pbCrashImage_02_Click(object sender, EventArgs e)
         {
-            if(ControllerUnlockCount == 5)
+            try
             {
-                timer.Stop();
-                ControllerUnlockCount = 0;
-                BlueScreenController controller = new BlueScreenController();
-                this.Hide();
-
-                if (controller.ShowDialog() == DialogResult.OK)
+                if (ControllerUnlockCount == 5)
                 {
-                    this.Show();
+                    timer.Stop();
+                    ControllerUnlockCount = 0;
+                    BlueScreenController controller = new BlueScreenController();
+                    this.Hide();
 
-                    Action = string.Empty;
-                    TimeOut = string.Empty;
+                    if (controller.ShowDialog() == DialogResult.OK)
+                    {
+                        this.Show();
 
-                    string[] configurations = BSActions.ReadConfigurationFile();
-                    Action = configurations[0];
-                    TimeOut = configurations[1];
+                        Action = string.Empty;
+                        TimeOut = string.Empty;
 
-                    timer.Start();
+                        string[] configurations = BSActions.ReadConfigurationFile();
+                        Action = configurations[0];
+                        TimeOut = configurations[1];
+
+                        timer.Start();
+                    }
+                }
+                else
+                {
+                    ControllerUnlockCount++;
                 }
             }
-            else
+            catch (Exception ex)
             {
-                ControllerUnlockCount++;
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            finally
+            {
+                Application.Exit();
             }
         }
     }

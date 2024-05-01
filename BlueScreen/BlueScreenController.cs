@@ -20,32 +20,42 @@ namespace BlueScreen
 
         private void BlueScreenController_Load(object sender, EventArgs e)
         {
-            string[] configuration = BSActions.ReadConfigurationFile();
-
-            if (configuration[0] == "Shutdown")
-                rbShutdown.Checked = true;
-
-            if (configuration[0] == "Restart")
-                rbRestart.Checked = true;
-
-            if (configuration[0] == "Sleep")
-                rbSleep.Checked = true;
-
-            if (configuration[1] == "OnStartup")
+            try
             {
-                rbOnStartup.Checked = true;
+                string[] configuration = BSActions.ReadConfigurationFile();
+
+                if (configuration[0] == "Shutdown")
+                    rbShutdown.Checked = true;
+
+                if (configuration[0] == "Restart")
+                    rbRestart.Checked = true;
+
+                if (configuration[0] == "Sleep")
+                    rbSleep.Checked = true;
+
+                if (configuration[1] == "OnStartup")
+                {
+                    rbOnStartup.Checked = true;
+                }
+                else
+                {
+                    nudTime.Value = decimal.Parse(configuration[1]);
+                    rbAfter.Checked = true;
+                }
+
+                if (configuration[2] == "true")
+                    chRunOnStartup.Checked = true;
+                else
+                    chRunOnStartup.Checked = false;
             }
-            else
+            catch (Exception ex)
             {
-                nudTime.Value = decimal.Parse(configuration[1]);
-                rbAfter.Checked = true;
+                MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            if (configuration[2] == "true")
-                chRunOnStartup.Checked = true;
-            else
-                chRunOnStartup.Checked = false;
-
+            finally
+            {
+                Application.Exit();
+            }
         }
 
         private void btnApply_Click(object sender, EventArgs e)
