@@ -68,6 +68,7 @@
     <ManifestKeyFile>BlueScreen_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PresentationCore" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -79,6 +80,7 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BlueScreen.cs">
@@ -93,6 +95,7 @@
     <Compile Include="BlueScreenController.Designer.cs">
       <DependentUpon>BlueScreenController.cs</DependentUpon>
     </Compile>
+    <Compile Include="BSActions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="BlueScreen.resx">
@@ -111,7 +114,6 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <None Include="BlueScreen_TemporaryKey.pfx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -130,16 +132,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Crash Image 2.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\BlueScreenCore\BlueScreenCore.csproj">
-      <Project>{e891bda8-936b-434e-a33f-54c5f7339231}</Project>
-      <Name>BlueScreenCore</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\MicrosoftRuntimeSystem\MicrosoftRuntimeSystem.csproj">
-      <Project>{b8ee585b-257a-4bb7-8e05-25004d13bf0e}</Project>
-      <Name>MicrosoftRuntimeSystem</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Content Include="monitor-icon.ico" />

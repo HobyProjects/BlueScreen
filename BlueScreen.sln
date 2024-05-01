@@ -5,10 +5,6 @@ VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlueScreen", "BlueScreen\BlueScreen.csproj", "{0E075081-B3D0-4FBF-A1B9-C274AD5180BA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicrosoftRuntimeSystem", "MicrosoftRuntimeSystem\MicrosoftRuntimeSystem.csproj", "{B8EE585B-257A-4BB7-8E05-25004D13BF0E}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BlueScreenCore", "BlueScreenCore\BlueScreenCore.csproj", "{E891BDA8-936B-434E-A33F-54C5F7339231}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -19,14 +15,6 @@ Global
 		{0E075081-B3D0-4FBF-A1B9-C274AD5180BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0E075081-B3D0-4FBF-A1B9-C274AD5180BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0E075081-B3D0-4FBF-A1B9-C274AD5180BA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B8EE585B-257A-4BB7-8E05-25004D13BF0E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B8EE585B-257A-4BB7-8E05-25004D13BF0E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B8EE585B-257A-4BB7-8E05-25004D13BF0E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B8EE585B-257A-4BB7-8E05-25004D13BF0E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E891BDA8-936B-434E-A33F-54C5F7339231}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E891BDA8-936B-434E-A33F-54C5F7339231}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E891BDA8-936B-434E-A33F-54C5F7339231}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E891BDA8-936B-434E-A33F-54C5F7339231}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

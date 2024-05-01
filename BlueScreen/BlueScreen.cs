@@ -1,13 +1,14 @@
-﻿using BlueScreenCore;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Input;
 
 namespace BlueScreen
 {
@@ -18,7 +19,6 @@ namespace BlueScreen
         private static string Action { get; set; }
         private static string TimeOut {  get; set; }  
 
-
         public BlueScreen()
         {
             InitializeComponent();
@@ -26,12 +26,12 @@ namespace BlueScreen
 
         private void BlueScreen_Load(object sender, EventArgs e)
         {
-            BlueScreenActions.FirstRunConfiguration();
+            BSActions.FirstRunConfiguration();
             ControllerUnlockCount = 0;
             lblProgress.Text = "0% complete";
             Presentage = 1;
 
-            string[] configurations = BlueScreenActions.ReadConfigurationFile();
+            string[] configurations = BSActions.ReadConfigurationFile();
             Action = configurations[0];
             TimeOut = configurations[1];
 
@@ -40,13 +40,13 @@ namespace BlueScreen
             if(TimeOut == "OnStartup")
             {
                 if (Action == "Shutdown")
-                    BlueScreenActions.Shutdown();
+                    BSActions.Shutdown();
 
                 if (Action == "Restart")
-                    BlueScreenActions.Restart();
+                    BSActions.Restart();
 
                 if (Action == "Sleep")
-                    BlueScreenActions.Sleep();
+                    BSActions.Sleep();
             }
             else
             {
@@ -62,13 +62,13 @@ namespace BlueScreen
             if(Presentage == 10)
             {
                 if (Action == "Shutdown")
-                    BlueScreenActions.Shutdown();
+                    BSActions.Shutdown();
 
                 if (Action == "Restart")
-                    BlueScreenActions.Restart();
+                    BSActions.Restart();
 
                 if (Action == "Sleep")
-                    BlueScreenActions.Sleep();
+                    BSActions.Sleep();
 
                 Presentage = 1;
             }
@@ -90,7 +90,7 @@ namespace BlueScreen
                     Action = string.Empty;
                     TimeOut = string.Empty;
 
-                    string[] configurations = BlueScreenActions.ReadConfigurationFile();
+                    string[] configurations = BSActions.ReadConfigurationFile();
                     Action = configurations[0];
                     TimeOut = configurations[1];
 
