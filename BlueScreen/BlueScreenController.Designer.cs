@@ -156,6 +156,7 @@
             this.rbAfter.TabStop = true;
             this.rbAfter.Text = "After";
             this.rbAfter.UseVisualStyleBackColor = true;
+            this.rbAfter.CheckedChanged += new System.EventHandler(this.rbAfter_CheckedChanged);
             // 
             // rbOnStartup
             // 
@@ -194,6 +195,7 @@
             // btnApply
             // 
             this.btnApply.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btnApply.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.btnApply.FlatAppearance.BorderSize = 0;
             this.btnApply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnApply.ForeColor = System.Drawing.Color.White;
