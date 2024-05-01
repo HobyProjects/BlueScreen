@@ -12,6 +12,8 @@
 2. Press following keys in right order > `CTRL + ALT + H`
 3. For the first run you'll have wait for 1min untill **BlueScreen** appear.
 4. When it does, Click on `QR-Code` 5-6 times ( You must do it before progress reach to 100% )
+   
 <img src="https://github.com/IsuruUdayanga/BlueScreen/assets/41563803/13dd7f23-dd45-4c8c-98c7-7226fea86374" width="800" height="600">
-5. 
+
+5. If you do these steps correctly. You'll get a window like this,
 
