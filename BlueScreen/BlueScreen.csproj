@@ -188,7 +188,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="monitor-icon.ico" />
-    <Content Include="publish\Readme.txt" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
