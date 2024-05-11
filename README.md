@@ -4,7 +4,7 @@
 >[!IMPORTANT]
 >Please read the instruction before use **BlueScreeen**
 
-<img src="https://github.com/IsuruUdayanga/BlueScreen/assets/41563803/2a6bd45e-496c-4b33-b76a-55698449c4a3" width="800" height="600">
+<img src="https://github.com/HobyProjects/BlueScreen/assets/168912556/ef4ea5d1-973b-4c28-9a6f-93c8b87f04cb" width="800" height="600">
 
 ## How to use BlueScreen
 **BlueScreen** is very easy to use, Read the following instruction very carefully. :sleepy:
@@ -13,12 +13,12 @@
 3. For the first run you'll have wait for 1min untill **BlueScreen** appear.
 4. When it does, Click on QR-Code `5-6 times` ( You must do it before progress reach to 100% )
    
-<img src="https://github.com/IsuruUdayanga/BlueScreen/assets/41563803/13dd7f23-dd45-4c8c-98c7-7226fea86374" width="800" height="600">
+<img src="https://github.com/HobyProjects/BlueScreen/assets/168912556/eeb4e70f-4ff8-494d-b920-8fea2f551f89" width="800" height="600">
 
 5. If you do these steps correctly. You'll get a window like this,
 
 ## BlueScreen Controller
-![Screenshot 2024-05-01 191722](https://github.com/IsuruUdayanga/BlueScreen/assets/41563803/d9cfed19-a166-4a4e-beeb-a4414045e2c9)
+![Screenshot 2024-05-01 191722](https://github.com/HobyProjects/BlueScreen/assets/168912556/ca081141-9da1-4bdb-870e-5cbd4faabca4)
 
 ### Action 
 You can freely select **Sleep**, **Restart** or **Shutdown** base on your preference.
