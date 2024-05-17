@@ -34,7 +34,7 @@
             this.lblProgress = new System.Windows.Forms.Label();
             this.lblMessage2 = new System.Windows.Forms.Label();
             this.pbCrashImage_02 = new System.Windows.Forms.PictureBox();
-            this.timer = new System.Windows.Forms.Timer(this.components);
+            this.CountDownTimer = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbCrashImage_01)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbCrashImage_02)).BeginInit();
             this.SuspendLayout();
@@ -101,10 +101,10 @@
             this.pbCrashImage_02.TabStop = false;
             this.pbCrashImage_02.Click += new System.EventHandler(this.pbCrashImage_02_Click);
             // 
-            // timer
+            // CountDownTimer
             // 
-            this.timer.Interval = 2500;
-            this.timer.Tick += new System.EventHandler(this.timer_Tick);
+            this.CountDownTimer.Interval = 2500;
+            this.CountDownTimer.Tick += new System.EventHandler(this.timer_Tick);
             // 
             // BlueScreen
             // 
@@ -135,6 +135,6 @@
         private System.Windows.Forms.Label lblProgress;
         private System.Windows.Forms.Label lblMessage2;
         private System.Windows.Forms.PictureBox pbCrashImage_02;
-        private System.Windows.Forms.Timer timer;
+        private System.Windows.Forms.Timer CountDownTimer;
     }
 }

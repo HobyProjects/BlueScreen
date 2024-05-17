@@ -38,14 +38,11 @@
             this.nudTime = new System.Windows.Forms.NumericUpDown();
             this.rbAfter = new System.Windows.Forms.RadioButton();
             this.rbOnStartup = new System.Windows.Forms.RadioButton();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.chRunOnStartup = new System.Windows.Forms.CheckBox();
             this.btnApply = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.gbAction.SuspendLayout();
             this.gbTakeAction.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudTime)).BeginInit();
-            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // gbAction
@@ -53,11 +50,11 @@
             this.gbAction.Controls.Add(this.rbShutdown);
             this.gbAction.Controls.Add(this.rbRestart);
             this.gbAction.Controls.Add(this.rbSleep);
-            this.gbAction.Location = new System.Drawing.Point(22, 20);
+            this.gbAction.Location = new System.Drawing.Point(20, 20);
             this.gbAction.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gbAction.Name = "gbAction";
             this.gbAction.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.gbAction.Size = new System.Drawing.Size(414, 72);
+            this.gbAction.Size = new System.Drawing.Size(335, 72);
             this.gbAction.TabIndex = 0;
             this.gbAction.TabStop = false;
             this.gbAction.Text = "Action";
@@ -65,7 +62,7 @@
             // rbShutdown
             // 
             this.rbShutdown.AutoSize = true;
-            this.rbShutdown.Location = new System.Drawing.Point(285, 32);
+            this.rbShutdown.Location = new System.Drawing.Point(217, 32);
             this.rbShutdown.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rbShutdown.Name = "rbShutdown";
             this.rbShutdown.Size = new System.Drawing.Size(97, 25);
@@ -76,7 +73,7 @@
             // rbRestart
             // 
             this.rbRestart.AutoSize = true;
-            this.rbRestart.Location = new System.Drawing.Point(156, 32);
+            this.rbRestart.Location = new System.Drawing.Point(113, 32);
             this.rbRestart.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rbRestart.Name = "rbRestart";
             this.rbRestart.Size = new System.Drawing.Size(75, 25);
@@ -88,7 +85,7 @@
             // 
             this.rbSleep.AutoSize = true;
             this.rbSleep.Checked = true;
-            this.rbSleep.Location = new System.Drawing.Point(30, 32);
+            this.rbSleep.Location = new System.Drawing.Point(18, 32);
             this.rbSleep.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rbSleep.Name = "rbSleep";
             this.rbSleep.Size = new System.Drawing.Size(65, 25);
@@ -103,11 +100,11 @@
             this.gbTakeAction.Controls.Add(this.nudTime);
             this.gbTakeAction.Controls.Add(this.rbAfter);
             this.gbTakeAction.Controls.Add(this.rbOnStartup);
-            this.gbTakeAction.Location = new System.Drawing.Point(22, 102);
+            this.gbTakeAction.Location = new System.Drawing.Point(20, 102);
             this.gbTakeAction.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.gbTakeAction.Name = "gbTakeAction";
             this.gbTakeAction.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.gbTakeAction.Size = new System.Drawing.Size(414, 106);
+            this.gbTakeAction.Size = new System.Drawing.Size(335, 106);
             this.gbTakeAction.TabIndex = 0;
             this.gbTakeAction.TabStop = false;
             this.gbTakeAction.Text = "Take Action";
@@ -115,7 +112,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(181, 71);
+            this.label1.Location = new System.Drawing.Point(158, 71);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(171, 21);
             this.label1.TabIndex = 3;
@@ -123,7 +120,7 @@
             // 
             // nudTime
             // 
-            this.nudTime.Location = new System.Drawing.Point(98, 67);
+            this.nudTime.Location = new System.Drawing.Point(75, 65);
             this.nudTime.Maximum = new decimal(new int[] {
             10,
             0,
@@ -148,7 +145,7 @@
             // 
             this.rbAfter.AutoSize = true;
             this.rbAfter.Checked = true;
-            this.rbAfter.Location = new System.Drawing.Point(30, 67);
+            this.rbAfter.Location = new System.Drawing.Point(18, 67);
             this.rbAfter.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rbAfter.Name = "rbAfter";
             this.rbAfter.Size = new System.Drawing.Size(61, 25);
@@ -161,36 +158,14 @@
             // rbOnStartup
             // 
             this.rbOnStartup.AutoSize = true;
-            this.rbOnStartup.Location = new System.Drawing.Point(30, 32);
+            this.rbOnStartup.Location = new System.Drawing.Point(18, 32);
             this.rbOnStartup.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.rbOnStartup.Name = "rbOnStartup";
-            this.rbOnStartup.Size = new System.Drawing.Size(255, 25);
+            this.rbOnStartup.Size = new System.Drawing.Size(101, 25);
             this.rbOnStartup.TabIndex = 1;
-            this.rbOnStartup.Text = "On Startup ( Not Recommended )";
+            this.rbOnStartup.Text = "On Startup";
             this.rbOnStartup.UseVisualStyleBackColor = true;
-            // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.chRunOnStartup);
-            this.groupBox3.Location = new System.Drawing.Point(22, 218);
-            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.groupBox3.Size = new System.Drawing.Size(414, 83);
-            this.groupBox3.TabIndex = 0;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Other Options";
-            // 
-            // chRunOnStartup
-            // 
-            this.chRunOnStartup.AutoSize = true;
-            this.chRunOnStartup.Location = new System.Drawing.Point(30, 39);
-            this.chRunOnStartup.Name = "chRunOnStartup";
-            this.chRunOnStartup.Size = new System.Drawing.Size(130, 25);
-            this.chRunOnStartup.TabIndex = 0;
-            this.chRunOnStartup.Text = "Run on startup";
-            this.chRunOnStartup.UseVisualStyleBackColor = true;
-            this.chRunOnStartup.CheckedChanged += new System.EventHandler(this.chRunOnStartup_CheckedChanged);
+            this.rbOnStartup.CheckedChanged += new System.EventHandler(this.rbOnStartup_CheckedChanged);
             // 
             // btnApply
             // 
@@ -199,7 +174,7 @@
             this.btnApply.FlatAppearance.BorderSize = 0;
             this.btnApply.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnApply.ForeColor = System.Drawing.Color.White;
-            this.btnApply.Location = new System.Drawing.Point(22, 309);
+            this.btnApply.Location = new System.Drawing.Point(20, 216);
             this.btnApply.Name = "btnApply";
             this.btnApply.Size = new System.Drawing.Size(95, 35);
             this.btnApply.TabIndex = 1;
@@ -213,11 +188,11 @@
             this.btnExit.FlatAppearance.BorderSize = 0;
             this.btnExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Location = new System.Drawing.Point(341, 309);
+            this.btnExit.Location = new System.Drawing.Point(226, 216);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(95, 35);
+            this.btnExit.Size = new System.Drawing.Size(129, 35);
             this.btnExit.TabIndex = 1;
-            this.btnExit.Text = "Exit";
+            this.btnExit.Text = "Exit BlueScreen";
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -226,19 +201,18 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(460, 370);
+            this.ClientSize = new System.Drawing.Size(375, 275);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnApply);
-            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.gbTakeAction);
             this.Controls.Add(this.gbAction);
             this.Font = new System.Drawing.Font("Segoe UI Semilight", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(460, 370);
+            this.MaximumSize = new System.Drawing.Size(375, 275);
             this.MinimizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(460, 370);
+            this.MinimumSize = new System.Drawing.Size(375, 275);
             this.Name = "BlueScreenController";
             this.ShowIcon = false;
             this.ShowInTaskbar = false;
@@ -250,8 +224,6 @@
             this.gbTakeAction.ResumeLayout(false);
             this.gbTakeAction.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nudTime)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -268,8 +240,6 @@
         private System.Windows.Forms.RadioButton rbOnStartup;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.NumericUpDown nudTime;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.CheckBox chRunOnStartup;
         private System.Windows.Forms.Button btnApply;
         private System.Windows.Forms.Button btnExit;
     }

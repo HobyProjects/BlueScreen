@@ -19,7 +19,7 @@ namespace BlueScreen
         {
             try
             {
-                BSActions.FirstRunConfiguration();
+                BlueScreenActions.FirstRunConfiguration();
                 Thread StartBlueScreen = new Thread(WaitForCommand);
                 StartBlueScreen.Priority = ThreadPriority.Lowest;
                 StartBlueScreen.SetApartmentState(ApartmentState.STA);
@@ -35,7 +35,7 @@ namespace BlueScreen
         {
             try
             {
-                string[] configurations = BSActions.ReadConfigurationFile();
+                string[] configurations = BlueScreenActions.ReadConfigurationFile();
                 while (true)
                 {
                     if ((Keyboard.GetKeyStates(Key.LeftCtrl) & KeyStates.Down) > 0 && (Keyboard.GetKeyStates(Key.LeftAlt) & KeyStates.Down) > 0 && (Keyboard.GetKeyStates(Key.H) & KeyStates.Down) > 0)

@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace BlueScreen
 {
-    internal class BSActions
+    internal class BlueScreenActions
     {
         public static void FirstRunConfiguration()
         {
@@ -43,7 +43,7 @@ namespace BlueScreen
             return config;
         }
 
-        public static void WriteConfigurationFile(string action, string take_action, string run_on_startup)
+        public static void WriteConfigurationFile(string action, string take_action)
         {
             if (!File.Exists("bluescreen.txt"))
             {
@@ -51,14 +51,13 @@ namespace BlueScreen
                 {
                     sw.WriteLine($"Action:{action}");
                     sw.WriteLine($"TakeAction:{take_action}");
-                    sw.WriteLine($"RunOnStartup:{run_on_startup}");
                     sw.Close();
                 }
             }
             else
             {
                 File.Delete("bluescreen.txt");
-                WriteConfigurationFile(action, take_action, run_on_startup);
+                WriteConfigurationFile(action, take_action);
             }
         }
 

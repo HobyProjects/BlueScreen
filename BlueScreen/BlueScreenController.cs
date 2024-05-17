@@ -22,7 +22,7 @@ namespace BlueScreen
         {
             try
             {
-                string[] configuration = BSActions.ReadConfigurationFile();
+                string[] configuration = BlueScreenActions.ReadConfigurationFile();
 
                 if (configuration[0] == "Shutdown")
                     rbShutdown.Checked = true;
@@ -42,34 +42,17 @@ namespace BlueScreen
                     nudTime.Value = decimal.Parse(configuration[1]);
                     rbAfter.Checked = true;
                 }
-
-                if (configuration[2] == "true")
-                    chRunOnStartup.Checked = true;
-                else
-                    chRunOnStartup.Checked = false;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                Application.Exit();
             }
         }
 
         private void btnApply_Click(object sender, EventArgs e)
         {
             string action = (rbShutdown.Checked) ? rbShutdown.Text : (rbRestart.Checked) ? rbRestart.Text : rbSleep.Text;
-            BSActions.WriteConfigurationFile(action, (rbOnStartup.Checked) ? "OnStartup" : nudTime.Value.ToString(), (chRunOnStartup.Checked) ? "true" : "false");
-        }
-
-        private void chRunOnStartup_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chRunOnStartup.Checked)
-                BSActions.StartUpRegistery(true, "BlueScreen.exe", Application.ExecutablePath);
-            else
-                BSActions.StartUpRegistery(false, "BlueScreen.exe", Application.ExecutablePath);
+            BlueScreenActions.WriteConfigurationFile(action, (rbOnStartup.Checked) ? "OnStartup" : nudTime.Value.ToString());
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -83,6 +66,14 @@ namespace BlueScreen
                 nudTime.Enabled = true;
             else
                 nudTime.Enabled = false;
+        }
+
+        private void rbOnStartup_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rbOnStartup.Checked)
+                BlueScreenActions.StartUpRegistery(true, "BlueScreen.exe", Application.ExecutablePath);
+            else
+                BlueScreenActions.StartUpRegistery(false, "BlueScreen.exe", Application.ExecutablePath);
         }
     }
 }

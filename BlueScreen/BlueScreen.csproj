@@ -133,7 +133,7 @@
     <Compile Include="BlueScreenController.Designer.cs">
       <DependentUpon>BlueScreenController.cs</DependentUpon>
     </Compile>
-    <Compile Include="BSActions.cs" />
+    <Compile Include="BlueScreenActions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">

@@ -1,14 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Windows.Input;
 
 namespace BlueScreen
 {
@@ -28,12 +19,12 @@ namespace BlueScreen
         {
             try
             {
-                BSActions.FirstRunConfiguration();
+                BlueScreenActions.FirstRunConfiguration();
                 ControllerUnlockCount = 0;
                 lblProgress.Text = "0% complete";
                 Presentage = 1;
 
-                string[] configurations = BSActions.ReadConfigurationFile();
+                string[] configurations = BlueScreenActions.ReadConfigurationFile();
                 Action = configurations[0];
                 TimeOut = configurations[1];
 
@@ -42,27 +33,23 @@ namespace BlueScreen
                 if (TimeOut == "OnStartup")
                 {
                     if (Action == "Shutdown")
-                        BSActions.Shutdown();
+                        BlueScreenActions.Shutdown();
 
                     if (Action == "Restart")
-                        BSActions.Restart();
+                        BlueScreenActions.Restart();
 
                     if (Action == "Sleep")
-                        BSActions.Sleep();
+                        BlueScreenActions.Sleep();
                 }
                 else
                 {
-                    timer.Start();
+                    CountDownTimer.Start();
                 }
             }
             catch(Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                Application.Exit();
-            }   
+            } 
         }
 
         private void timer_Tick(object sender, EventArgs e)
@@ -75,13 +62,13 @@ namespace BlueScreen
                 if (Presentage == 10)
                 {
                     if (Action == "Shutdown")
-                        BSActions.Shutdown();
+                        BlueScreenActions.Shutdown();
 
                     if (Action == "Restart")
-                        BSActions.Restart();
+                        BlueScreenActions.Restart();
 
                     if (Action == "Sleep")
-                        BSActions.Sleep();
+                        BlueScreenActions.Sleep();
 
                     Presentage = 1;
                 }
@@ -89,10 +76,6 @@ namespace BlueScreen
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                Application.Exit();
             } 
         }
 
@@ -102,23 +85,15 @@ namespace BlueScreen
             {
                 if (ControllerUnlockCount == 5)
                 {
-                    timer.Stop();
+                    CountDownTimer.Stop();
                     ControllerUnlockCount = 0;
                     BlueScreenController controller = new BlueScreenController();
                     this.Hide();
 
                     if (controller.ShowDialog() == DialogResult.OK)
                     {
-                        this.Show();
-
-                        Action = string.Empty;
-                        TimeOut = string.Empty;
-
-                        string[] configurations = BSActions.ReadConfigurationFile();
-                        Action = configurations[0];
-                        TimeOut = configurations[1];
-
-                        timer.Start();
+                        MessageBox.Show("BlueScreen is restarting. To Apply changes you made", "Inform", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Application.Restart();
                     }
                 }
                 else
@@ -129,10 +104,6 @@ namespace BlueScreen
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            finally
-            {
-                Application.Exit();
             }
         }
     }
